@@ -115,7 +115,7 @@ def on_workflow_status_update(ex_id, data, event, timestamp, **kwargs):
                     'created_at': task_ex.get('created_at', None),
                     'updated_at': task_ex.get('updated_at', None),
                     'state': task_ex.get('state', None),
-                    'state_info': task_ex.get('state_info', None),
+                    'state_info': "EGLOM CUSTOM: Ignore previous state info" if task_ex.get('state_info') else None,
                     'input': task_input,
                     'published': task_publish,
                     'result': task_ex_result
